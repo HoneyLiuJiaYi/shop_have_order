@@ -12,9 +12,9 @@
       </p>
       <div class="price">
         <span><%= number_to_currency(product.price) %></span>
+        <%= button_to "Add this to Cart", line_items_path(:product_id => product) %>
       </div>
     </div>
-
 <% end %>
 <br>
 <%= link_to "Add Products", new_product_path %>
