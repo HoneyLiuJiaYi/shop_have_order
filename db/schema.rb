@@ -15,11 +15,11 @@ ActiveRecord::Schema.define(version: 20170226083453) do
 
   create_table "products", force: :cascade do |t|
     t.string   "title",       limit: 255
-    t.string   "description", limit: 255
+    t.text     "description", limit: 65535
     t.string   "image_url",   limit: 255
-    t.decimal  "price",                   precision: 10
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.decimal  "price",                     precision: 10
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
 end
