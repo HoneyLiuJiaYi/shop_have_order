@@ -1,7 +1,11 @@
 <div class="cart_title"><h1>Your Cart</h1></div>
 <table>
   <% @cart.line_items.each do |item| %>
-      <%= render(@cart.line_items) %>
+      <tr>
+        <td><%= item.quantity %> &times; </td>
+        <td><%= item.product.title %></td>
+        <td><%= number_to_currency(item.total_price) %></td>
+      </tr>
   <% end %>
   <tr></tr>
   <tr>
@@ -15,5 +19,7 @@
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>
 
+<br/><br/><br/>
+<%= button_to "CheckOut", new_order_path, :method => :get %>
 <br/><br/><br/>
 <%= button_to "Empty Cart", @cart, :method => :delete, data: { confirm: "Are you Sure Right?" } %>
