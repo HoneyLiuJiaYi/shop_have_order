@@ -12,5 +12,4 @@ class Order < ActiveRecord::Base
         line_items << item   #定义了一个新值
     end
   end
-
 end

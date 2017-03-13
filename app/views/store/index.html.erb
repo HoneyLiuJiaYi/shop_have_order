@@ -1,9 +1,8 @@
 <% if notice %>
     <p id="notice"><%= notice %></p>
 <% end %>
-
+<br/><br/><br/>
 <h1>Your Products Catalog</h1>
-
 <% @products.each do |product| %>
     <div class="entry">
       <h4><%= product.title %></h4>
@@ -17,4 +16,6 @@
     </div>
 <% end %>
 <br>
-<%= link_to "Add Products", new_product_path %>
+<div>
+  <%= link_to "Add Products", new_product_path%>
+</div>
